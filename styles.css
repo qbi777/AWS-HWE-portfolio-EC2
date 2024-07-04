@@ -1,0 +1,528 @@
+/* Default styles for all screens */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    height: 500vh; /* Adjust height as needed */
+}
+
+.page {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure each page takes up full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.5s;
+}
+
+/* Page-specific styles */
+#page1 { background-color: #8d8d8d2f; z-index: 5; }
+#page2 { background-color: #ffffff; z-index: 4; }
+#page3 { background-color: #8d8d8d2f; z-index: 3; }
+#page4 { background-color: #f7f5f4; z-index: 2; }
+#page5 { background-color: #f9f7fb; z-index: 1; }
+
+/* Header and footer styles */
+header, footer {
+    background-color: #2825257d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+header {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    height: 60px;
+}
+
+footer {
+    bottom: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Page 01 */
+.bg-container-page-1 {
+    z-index: 0;
+    background-image: url("wallpaper.jpg");
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 15px; 
+    display: flex;
+    background-color: rgba(0,0,0,0.4); 
+    color: white;
+    font-weight: bold;
+    border: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 20%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.bg-container-page-1:hover {
+    box-shadow: 0 0 20px 10px rgba(176, 40, 40, 0.8);
+}
+
+.circular-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 50px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#typing-text {
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 2%;
+    background-color: rgba(67, 55, 55, 0);
+    color: white;
+    font-weight: bold;
+    border: transparent;
+    position: absolute;
+    justify-content: center;
+    top:50%;
+    left:50%;
+    transform: translate(-30%,-55%);
+    width:50%;
+    padding:5%;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* 2nd page */
+/* Container for the scrollable area */
+.scroll-container-pg2 {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    right: 2%;
+}
+
+/* Style for each document preview */
+.scroll-container-pg2 figure {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* Default image style */
+.scroll-container-pg2 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    border-radius: 15%;
+    border-color: #faf8f8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
+}
+
+/* Hover effect for image */
+.scroll-container-pg2 img:hover {
+    transform: scale(1.1); /* Slightly increase size */
+    box-shadow: 0 0 20px 10px rgba(165, 43, 43, 0.8); /* Glowing effect */
+}
+
+/* Style for figcaption */
+.scroll-container-pg2 figcaption {
+    font-family: 'Times New Roman', Times, serif;
+    color: white !important; /* Force the color to white */
+    font-size: 20px;
+}
+
+/* New CSS for preview window */
+.document-preview {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
+/* Tooltip styles */
+#preview-tooltip {
+    position: absolute;
+    display: none;
+    background-color: #eff0f1;
+    border: 1px solid #992c2c;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(242, 235, 235, 0.1);
+    z-index: 100; /* Ensure tooltip appears above other content */
+    max-width: 300px; /* Adjust width as needed */
+    border-radius: 5%;
+}
+
+/* 3rd page */
+
+.container-3 {
+    width: 70%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 15%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* 4 rows */
+    gap: 15px; /* Adjust as needed for spacing */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.5s;
+    border-radius: 50%; /* Make the items circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 10px rgba(176, 40, 40, 0.8);
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.preview-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.preview-container img,
+.preview-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skill {
+    font-size: 2.5em;
+    font-family: "Lucida Handwriting", Cursive;
+    color: #070707;
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    border-radius: 5%;
+}
+
+/* 4th page */
+.bg-container-pg4 {
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 15px; 
+    display: flex;
+    background-color: rgba(236, 229, 229, 0.4); 
+    color: white;
+    font-weight: bold;
+    border: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 10%;
+}
+
+.letter {
+    font-size: 1.5em;
+    font-family: "Lucida Handwriting", Cursive;
+    color: #171a58;
+    border-radius: 5%;
+    line-height: 1.6; /* Adjusts the line spacing */
+    text-align: justify; /* Justifies the text for clean right and left edges */
+    margin: 0 auto; /* Centers the content */
+    max-width: 800px; /* Optional: Limits the width of the content for better readability */
+}
+
+.bg-container-pg4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    text-align: center;
+    padding: 20px;
+}
+.bg-container-pg4:hover {
+    box-shadow: 0 0 20px 10px rgba(165, 43, 43, 0.8); 
+    
+}
+
+
+.lucida-handwriting-pg4 {
+    font-family: "Lucida Handwriting", Cursive;
+    text-align: center;
+    color: #f7f5f4;
+    font-size: 2.5em;
+}
+
+.letter-my-name {
+    font-size: 1.5em;
+    font-family: "Lucida Handwriting", Cursive;
+    color: #cc1818;
+    text-align: right;
+    width: 100%;
+    margin-top: 10px; /* Adds some space above the name */
+}
+
+/* 5th page */
+.lucida-handwriting-pg5 {
+    font-family: "Lucida Handwriting", Cursive;
+    text-align: center;
+    color: #050505;
+    font-size: 2.5em;
+}
+
+.contact-me-container {
+    z-index: 0;
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 15px; 
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.784); 
+    color: white;
+    font-weight: bold;
+    border: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    padding: 20%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 16px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 15%;
+}
+.contact-container:hover { 
+    box-shadow: 0 0 20px 10px rgba(252, 252, 252, 0.8); 
+}
+.contact-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: #888;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.contact-details {
+    color: #050505;
+    flex: 1;
+    font-size: 18px;
+}
+
+.contact-details p {
+    margin: 8px 0;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.social-links {
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 8px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.google-scholar {
+    background-color: #d14836;
+}
+
+.github {
+    background-color: #333;
+}
+
+.medium {
+    background-color: #00ab6c;
+}
+
+/* Optional: Add a semi-transparent overlay for better text readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 0;
+}
+
+/* Responsive adjustments using media queries */
+
+/* Tablet screens (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+    .bg-container-page-1 {
+        width: 70%;
+        padding: 15%;
+    }
+    
+    .contact-me-container {
+        width: 70%;
+        padding: 15%;
+    }
+    
+    .container-3 {
+        width: 80%;
+        padding: 10%;
+    }
+    
+    .skill {
+        left: 60%;
+    }
+    
+    .bg-container-pg4 {
+        width: 70%;
+        padding: 15%;
+    }
+}
+
+/* Mobile screens (up to 767px) */
+@media screen and (max-width: 767px) {
+    .bg-container-page-1 {
+        width: 90%;
+        padding: 10%;
+    }
+    
+    .contact-me-container {
+        width: 90%;
+        padding: 10%;
+    }
+    
+    .container-3 {
+        width: 90%;
+        padding: 5%;
+    }
+    
+    .skill {
+        left: 50%;
+    }
+    
+    .bg-container-pg4 {
+        width: 90%;
+        padding: 10%;
+    }
+    
+    .letter {
+        font-size: 1.2em;
+    }
+    
+    .lucida-handwriting-pg4,
+    .lucida-handwriting-pg5 {
+        font-size: 2em;
+    }
+}
