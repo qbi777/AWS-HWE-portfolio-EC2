@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type();
 
+    // Preview window script
     const previews = document.querySelectorAll('.document-preview');
     const tooltip = document.getElementById('preview-tooltip');
 
@@ -41,6 +42,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         img.addEventListener('mouseleave', function() {
             tooltip.style.display = 'none';
+        });
+    });
+
+    const gridItems = document.querySelectorAll('.grid-item');
+    const previewContainer = document.getElementById('preview-container');
+    const previewImage = document.getElementById('preview-image');
+    const previewVideo = document.getElementById('preview-video');
+
+    gridItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            const previewType = item.getAttribute('data-preview-type');
+            const previewSrc = item.getAttribute('data-preview-src');
+
+            if (previewType === 'image') {
+                previewImage.src = previewSrc;
+                previewImage.style.display = 'block';
+                previewVideo.style.display = 'none';
+                previewVideo.pause();
+                previewVideo.currentTime = 0;
+            } else if (previewType === 'video') {
+                previewVideo.src = previewSrc;
+                previewVideo.style.display = 'block';
+                previewImage.style.display = 'none';
+                
+                previewVideo.load();
+                previewVideo.play().catch(error => {
+                    console.log('Autoplay prevented:', error);
+                });
+            }
+
+            previewContainer.style.display = 'block';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            previewContainer.style.display = 'none';
+            previewImage.src = '';
+            previewVideo.pause();
+            previewVideo.src = '';
         });
     });
 });
